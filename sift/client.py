@@ -214,7 +214,7 @@ class Response(object):
 
         if (self.http_status_code not in self.HTTP_CODES_WITHOUT_BODY) \
             and 'content-length' in http_response.headers:
-            self.body = http_response.json()
+            self.body = http_response.json
             self.api_status = self.body['status']
             self.api_error_message = self.body['error_message']
             if 'request' in self.body.keys() \
